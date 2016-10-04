@@ -44,10 +44,16 @@
     <Compile Include="Http\AsyncResponseReceivedEventArgs.cs" />
     <Compile Include="Http\ResponseReceivedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DepartureService.cs" />
     <Compile Include="Services\StationService.cs" />
+    <Compile Include="Services\TravelPlannerService.cs" />
     <Compile Include="Station\Namen.cs" />
     <Compile Include="Station\Station.cs" />
     <Compile Include="Station\Stations.cs" />
+    <Compile Include="TravelPlanner\ReisDeel.cs" />
+    <Compile Include="TravelPlanner\ReisMogelijkheden.cs" />
+    <Compile Include="TravelPlanner\ReisMogelijkheid.cs" />
+    <Compile Include="TravelPlanner\ReisStop.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
