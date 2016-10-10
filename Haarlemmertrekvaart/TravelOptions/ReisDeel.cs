@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.TravelPlanner
+namespace Haarlemmertrekvaart.TravelOptions
 {
     public class ReisDeel
     {
+        // Travel Section
+
         public string Vervoerder { get; set; }
 
         public string VervoerType { get; set; }
@@ -16,6 +18,7 @@ namespace Haarlemmertrekvaart.TravelPlanner
         [XmlElement("Reisdetails")]
         public List<string> Reisdetail { get; set; }
 
+        [XmlElement("ReisStop", typeof(ReisStop))]
         public List<ReisStop> ReisStop { get; set; }
     }
 }

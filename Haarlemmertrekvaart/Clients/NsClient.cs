@@ -56,6 +56,7 @@ namespace Haarlemmertrekvaart.Clients
 
             if (response.IsSuccessStatusCode)
             {
+
                 // Deserialize object // todo : what about returning json dear NS friends?!
                 var data = await response.Content.ReadAsStreamAsync();
                 var xmlSerializer = new XmlSerializer(typeof(T));
@@ -91,6 +92,6 @@ namespace Haarlemmertrekvaart.Clients
         /// <summary>
         /// Provides all API methods in Travel Planner area
         /// </summary>
-        public TravelPlannerService TravelPlannerService => new TravelPlannerService(this);
+        public TravelOptionsService TravelOptionsService => new TravelOptionsService(this);
     }
 }

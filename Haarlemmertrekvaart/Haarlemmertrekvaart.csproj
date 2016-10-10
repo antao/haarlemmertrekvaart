@@ -46,14 +46,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DepartureService.cs" />
     <Compile Include="Services\StationService.cs" />
-    <Compile Include="Services\TravelPlannerService.cs" />
+    <Compile Include="Services\TravelOptionsService.cs" />
     <Compile Include="Station\Namen.cs" />
     <Compile Include="Station\Station.cs" />
     <Compile Include="Station\Stations.cs" />
-    <Compile Include="TravelPlanner\ReisDeel.cs" />
-    <Compile Include="TravelPlanner\ReisMogelijkheden.cs" />
-    <Compile Include="TravelPlanner\ReisMogelijkheid.cs" />
-    <Compile Include="TravelPlanner\ReisStop.cs" />
+    <Compile Include="TravelOptions\ReisDeel.cs" />
+    <Compile Include="TravelOptions\ReisMogelijkheden.cs" />
+    <Compile Include="TravelOptions\ReisMogelijkheid.cs" />
+    <Compile Include="TravelOptions\ReisStop.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

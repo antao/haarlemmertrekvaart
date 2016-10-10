@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.TravelPlanner
+namespace Haarlemmertrekvaart.TravelOptions
 {
     public class ReisMogelijkheid
     {
-        // Language domain should be kept in Dutch
-
         public int AantalOverstappen { get; set; }
 
         public string GeplandeReisTijd { get; set; }
@@ -17,7 +17,15 @@ namespace Haarlemmertrekvaart.TravelPlanner
 
         public bool Optimaal { get; set; }
 
-        //public DateTime GeplandeVertrekTijd { get; set; }
+        [XmlIgnore()]
+        public DateTime GeplandeVertrekTijd { get; set; }
+
+        [XmlElement(ElementName = "GeplandeVertrekTijd")]
+        public string XmlGeplandeVertrekTijd
+        {
+            get { return XmlConvert.ToString(GeplandeVertrekTijd, XmlDateTimeSerializationMode.Utc); }
+            set { GeplandeVertrekTijd = DateTimeOffset.Parse(value).DateTime; }
+        }
 
         //public DateTime ActueleVertrekTijd { get; set; }
 
@@ -27,6 +35,7 @@ namespace Haarlemmertrekvaart.TravelPlanner
 
         public string Status { get; set; }
 
-        //public List<ReisDeel> ReisDeel { get; set; }
+        [XmlElement("ReisDeel", typeof(ReisDeel))]
+        public List<ReisDeel> ReisDeel { get; set; }
     }
 }

@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Haarlemmertrekvaart.Clients;
-using Haarlemmertrekvaart.TravelPlanner;
+using Haarlemmertrekvaart.TravelOptions;
 
 namespace Haarlemmertrekvaart.Services
 {
-    public class TravelPlannerService
+    public class TravelOptionsService
     {
         private readonly NsClient _nsClient;
 
-        public TravelPlannerService(NsClient currentInstance)
+        public TravelOptionsService(NsClient currentInstance)
         {
             _nsClient = currentInstance;
         }
 
-        public async Task<ReisMogelijkheden> Planner(string departure, string destination)
+        public async Task<ReisMogelijkheden> GetTravelOptions(string departure, string destination)
         {
             if (string.IsNullOrWhiteSpace(departure))
             {
@@ -26,7 +26,7 @@ namespace Haarlemmertrekvaart.Services
                 throw new ArgumentException("Destination cannot be null or whitespace!");
             }
 
-            return await _nsClient.Get<ReisMogelijkheden>("ns-api-treinplanner?fromStation=Amsterdam+Centraal&toStation=Rotterdam+Centraal&departure=true");
+            return await _nsClient.Get<ReisMogelijkheden>("ns-api-treinplanner?fromStation=Utrecht+Centraal&toStation=Wierden&departure=true");
         }
     }
 }
