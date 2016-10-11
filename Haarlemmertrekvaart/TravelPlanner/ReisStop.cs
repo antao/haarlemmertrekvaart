@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haarlemmertrekvaart.TravelOptions
+namespace Haarlemmertrekvaart.TravelPlanner
 {
     public class ReisStop
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.TravelOptions
+namespace Haarlemmertrekvaart.TravelPlanner
 {
     public class ReisDeel
     {

@@ -92,6 +92,6 @@ namespace Haarlemmertrekvaart.Clients
         /// <summary>
         /// Provides all API methods in Travel Planner area
         /// </summary>
-        public TravelOptionsService TravelOptionsService => new TravelOptionsService(this);
+        public TravelPlannerService TravelPlannerService => new TravelPlannerService(this);
     }
 }
