@@ -27,11 +27,36 @@ namespace Haarlemmertrekvaart.TravelPlanner
             set { GeplandeVertrekTijd = DateTimeOffset.Parse(value).DateTime; }
         }
 
-        //public DateTime ActueleVertrekTijd { get; set; }
+        [XmlIgnore()]
+        public DateTime ActueleVertrekTijd { get; set; }
 
-        //public DateTime GeplandeAankomstTijd { get; set; }
+        [XmlElement(ElementName = "ActueleVertrekTijd")]
+        public string XmlActueleVertrekTijd
+        {
+            get { return XmlConvert.ToString(ActueleVertrekTijd, XmlDateTimeSerializationMode.Utc); }
+            set { ActueleVertrekTijd = DateTimeOffset.Parse(value).DateTime; }
+        }
 
-        //public DateTime ActueleAankomstTijd { get; set; }
+        [XmlIgnore()]
+        public DateTime GeplandeAankomstTijd { get; set; }
+
+        [XmlElement(ElementName = "GeplandeAankomstTijd")]
+        public string XmlGeplandeAankomstTijd
+        {
+            get { return XmlConvert.ToString(GeplandeAankomstTijd, XmlDateTimeSerializationMode.Utc); }
+            set { GeplandeAankomstTijd = DateTimeOffset.Parse(value).DateTime; }
+        }
+
+        [XmlIgnore()]
+        public DateTime ActueleAankomstTijd { get; set; }
+
+        [XmlElement(ElementName = "ActueleAankomstTijd")]
+        public string XmlActueleAankomstTijd
+        {
+            get { return XmlConvert.ToString(ActueleAankomstTijd, XmlDateTimeSerializationMode.Utc); }
+            set { ActueleAankomstTijd = DateTimeOffset.Parse(value).DateTime; }
+        }
+
 
         public string Status { get; set; }
 
