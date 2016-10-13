@@ -13,7 +13,7 @@ namespace Haarlemmertrekvaart.Services
             _nsClient = currentInstance;
         }
 
-        public async Task<Stations> GetStationsAsync()
+        public async Task<Stations> GetStations()
         {
             return await _nsClient.Get<Stations>("ns-api-stations-v2");
         }
