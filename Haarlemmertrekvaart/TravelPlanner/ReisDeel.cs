@@ -18,7 +18,7 @@ namespace Haarlemmertrekvaart.TravelPlanner
         [XmlElement("Reisdetails")]
         public List<string> Reisdetail { get; set; }
 
-        [XmlElement("ReisStop", typeof(ReisStop))]
+        [XmlElement(ElementName = "ReisStop")]
         public List<ReisStop> ReisStop { get; set; }
     }
 }

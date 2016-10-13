@@ -60,7 +60,7 @@ namespace Haarlemmertrekvaart.TravelPlanner
 
         public string Status { get; set; }
 
-        [XmlElement("ReisDeel", typeof(ReisDeel))]
+        [XmlElement(ElementName = "ReisDeel")]
         public List<ReisDeel> ReisDeel { get; set; }
 
         public Melding Melding { get; set; }
