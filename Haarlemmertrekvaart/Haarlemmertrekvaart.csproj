@@ -45,17 +45,21 @@
     <Compile Include="Http\ResponseReceivedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DepartureService.cs" />
+    <Compile Include="Services\DisruptionService.cs" />
     <Compile Include="Services\StationService.cs" />
     <Compile Include="Services\TravelPlannerService.cs" />
     <Compile Include="Station\Namen.cs" />
     <Compile Include="Station\Station.cs" />
     <Compile Include="Station\Stations.cs" />
+    <Compile Include="TravelPlanner\Melding.cs" />
     <Compile Include="TravelPlanner\ReisDeel.cs" />
     <Compile Include="TravelPlanner\ReisMogelijkheden.cs" />
     <Compile Include="TravelPlanner\ReisMogelijkheid.cs" />
     <Compile Include="TravelPlanner\ReisStop.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Disruption\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
