@@ -4,11 +4,6 @@ using Haarlemmertrekvaart.Station;
 
 namespace Haarlemmertrekvaart.Services
 {
-    public interface IStationService
-    {
-        Task<Stations> GetStationsAsync();
-    }
-
     public class StationService
     {
         private readonly NsClient _nsClient;
@@ -18,7 +13,7 @@ namespace Haarlemmertrekvaart.Services
             _nsClient = currentInstance;
         }
 
-        public async Task<Stations> GetStationsAsync()
+        public async Task<Stations> GetStations()
         {
             return await _nsClient.Get<Stations>("ns-api-stations-v2");
         }

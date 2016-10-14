@@ -93,5 +93,10 @@ namespace Haarlemmertrekvaart.Clients
         /// Provides all API methods in Travel Planner area
         /// </summary>
         public TravelPlannerService TravelPlannerService => new TravelPlannerService(this);
+
+        /// <summary>
+        /// Provides all API methods in Disruption/Engineering works area
+        /// </summary>
+        public DisruptionService DisruptionService => new DisruptionService(this);
     }
 }

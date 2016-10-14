@@ -33,7 +33,7 @@ namespace Haarlemmertrekvaart.Services
                 throw new ArgumentException("Destination cannot be null or whitespace!");
             }
 
-            string url = string.Format("ns-api-treinplanner?fromStation={0}&toStation={1}", fromStation, toStation);
+            string url = $"ns-api-treinplanner?fromStation={fromStation}&toStation={toStation}";
 
             return await _nsClient.Get<ReisMogelijkheden>(url);
         }

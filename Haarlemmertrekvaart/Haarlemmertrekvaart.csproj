@@ -41,15 +41,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\NsClient.cs" />
+    <Compile Include="Disruption\Gepland.cs" />
+    <Compile Include="Disruption\Ongepland.cs" />
+    <Compile Include="Disruption\Storing.cs" />
+    <Compile Include="Disruption\Storingen.cs" />
     <Compile Include="Http\AsyncResponseReceivedEventArgs.cs" />
     <Compile Include="Http\ResponseReceivedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DepartureService.cs" />
+    <Compile Include="Services\DisruptionService.cs" />
     <Compile Include="Services\StationService.cs" />
     <Compile Include="Services\TravelPlannerService.cs" />
     <Compile Include="Station\Namen.cs" />
     <Compile Include="Station\Station.cs" />
     <Compile Include="Station\Stations.cs" />
+    <Compile Include="TravelPlanner\Melding.cs" />
     <Compile Include="TravelPlanner\ReisDeel.cs" />
     <Compile Include="TravelPlanner\ReisMogelijkheden.cs" />
     <Compile Include="TravelPlanner\ReisMogelijkheid.cs" />
