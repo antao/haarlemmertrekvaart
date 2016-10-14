@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Haarlemmertrekvaart.Clients;
 using Haarlemmertrekvaart.Disruption;
 
@@ -24,7 +23,6 @@ namespace Haarlemmertrekvaart.Services
         public async Task<Storingen> GetDisruptions(bool actual, string station, bool unplanned = false)
         {
             string url = $"ns-api-storingen?actual={actual}&station={station}&unplanned={unplanned}";
-
             return await _nsClient.Get<Storingen>(url);
         }
     }
