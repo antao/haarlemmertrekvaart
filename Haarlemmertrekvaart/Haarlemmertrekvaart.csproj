@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\NsClient.cs" />
+    <Compile Include="Disruption\Gepland.cs" />
+    <Compile Include="Disruption\Ongepland.cs" />
+    <Compile Include="Disruption\Storing.cs" />
+    <Compile Include="Disruption\Storingen.cs" />
     <Compile Include="Http\AsyncResponseReceivedEventArgs.cs" />
     <Compile Include="Http\ResponseReceivedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,9 +61,7 @@
     <Compile Include="TravelPlanner\ReisMogelijkheid.cs" />
     <Compile Include="TravelPlanner\ReisStop.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Disruption\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
