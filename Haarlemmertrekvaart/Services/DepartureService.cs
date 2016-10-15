@@ -14,7 +14,7 @@ namespace Haarlemmertrekvaart.Services
             _nsClient = currentInstance;
         }
 
-        public async Task<Departures> GetDepartures(string station)
+        public async Task<ActueleVertrekTijden> GetDepartures(string station)
         {
             if (string.IsNullOrWhiteSpace(station))
             {
@@ -22,7 +22,7 @@ namespace Haarlemmertrekvaart.Services
             }
 
             string url = $"ns-api-avt?station={station}";
-            return await _nsClient.Get<Departures>(url);
+            return await _nsClient.Get<ActueleVertrekTijden>(url);
         }
     }
 }
