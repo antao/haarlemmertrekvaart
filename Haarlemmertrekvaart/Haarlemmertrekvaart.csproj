@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\NsClient.cs" />
+    <Compile Include="Departure\Departures.cs" />
     <Compile Include="Disruption\Gepland.cs" />
     <Compile Include="Disruption\Ongepland.cs" />
     <Compile Include="Disruption\Storing.cs" />
