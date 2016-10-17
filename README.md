@@ -13,7 +13,7 @@ https://www.ns.nl/ews-aanvraagformulier/
 ### General 
 Getting data from NS pretty straightforward. Create a NsClient object and enter a valid username and password.
 
-```chsarp
+```cs
 NsClient client = new NsClient("username", "password");
 ```
 
@@ -21,7 +21,7 @@ NsClient client = new NsClient("username", "password");
 *Work in progress*
 
 #### Stations
-```chsarp
+```cs
 var stations = await client.StationService.GetStations();
 ```
 
