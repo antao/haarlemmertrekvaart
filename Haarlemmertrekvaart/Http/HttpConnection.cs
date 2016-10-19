@@ -1,6 +1,8 @@
 ﻿using Haarlemmertrekvaart.Http.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -12,24 +14,34 @@ namespace Haarlemmertrekvaart.Http
 
         public async Task<IHttpResponse> Get(IHttpRequest request)
         {
+            IHttpResponse httpResponse;
             ConfigureRequest(request, HttpClient);
-            var httpResponseMessage = await HttpClient.GetAsync(request.RequestUri).ConfigureAwait(false);
-            return await CreatHttpResponse(httpResponseMessage).ConfigureAwait(false);
+            try
+            {
+                var httpResponseMessage = await HttpClient.GetAsync(request.RequestUri).ConfigureAwait(false);
+                httpResponse = await CreatHttpResponse(httpResponseMessage).ConfigureAwait(false);
+            }
+            catch (WebException ex)
+            {
+                httpResponse = HandleException(ex);
+            }
+
+            return httpResponse;
         }
 
         public Task<IHttpResponse> Put(IHttpRequest request)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<IHttpResponse> Post(IHttpRequest request)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<IHttpResponse> Delete(IHttpRequest request)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
 
@@ -90,6 +102,16 @@ namespace Haarlemmertrekvaart.Http
                         continue;
                 }
             }
+        }
+
+        private static IHttpResponse HandleException(Exception e)
+        {
+            return new HttpResponse(false)
+            {
+                StatusCode = HttpStatusCode.InternalServerError,
+                ReasonPhrase = "Internal Server Error",
+                Content = e.Message
+            };
         }
     }
 }
