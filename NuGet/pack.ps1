@@ -1,4 +1,7 @@
-$root = (split-path -parent $MyInvocation.MyCommand.Definition) + '\..'
+$root = (split-path -parent $PSScriptRoot) + '\..'
+
+Write-Host "ROOT - " + $root -ForegroundColor Magenta
+
 $version = [System.Reflection.Assembly]::LoadFile("$root\Haarlemmertrekvaart\bin\Release\Haarlemmertrekvaart.dll").GetName().Version
 $versionStr = "{0}.{1}.{2}" -f ($version.Major, $version.Minor, $version.Build)
 
