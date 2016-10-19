@@ -1,6 +1,9 @@
+
 # haarlemmertrekvaart
 *Work in progress*
 
+ [![Build status](https://ci.appveyor.com/api/projects/status/aowu3evc5c24lqay?svg=true)](https://ci.appveyor.com/project/antao/haarlemmertrekvaart)
+ 
 ## Installation
 *Work in progress*
 
