@@ -9,7 +9,7 @@
 ### General
 Getting data from NS pretty straightforward. Create a NsClient object and enter a valid username and key.
 
-```chsarp
+```cs
 ConnectionConfiguration connectionConfiguration = new ConnectionConfiguration("joaoantao", "myawesomekey");
 NsClient nsClient = new NsClient(connectionConfiguration);
 ```
@@ -23,7 +23,7 @@ https://www.ns.nl/ews-aanvraagformulier/
 *Work in progress*
 
 #### Stations
-```chsarp
+```cs
 var stations = await client.Stations.GetAll();
 ```
 
