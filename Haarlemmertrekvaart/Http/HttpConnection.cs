@@ -1,23 +1,18 @@
 ﻿using Haarlemmertrekvaart.Http.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace Haarlemmertrekvaart.Http
 {
     public class HttpConnection : IHttpConnection
     {
-        
         private static readonly HttpClient HttpClient = new HttpClient();
 
         public async Task<IHttpResponse> Get(IHttpRequest request)
         {
             ConfigureRequest(request, HttpClient);
-
-            // var response2 = await HttpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, request.RequestUri.PathAndQuery));
             var responseMessage = await HttpClient.GetAsync(request.RequestUri).ConfigureAwait(false);
             return await BuildResponse(responseMessage).ConfigureAwait(false);
         }
@@ -31,6 +26,7 @@ namespace Haarlemmertrekvaart.Http
                 ReasonPhrase = responseMessage.ReasonPhrase,
                 Content = await responseMessage.Content.ReadAsStringAsync().ConfigureAwait(false)
             };
+
             return response;
         }
 

@@ -1,10 +1,9 @@
-﻿using System;
-using Haarlemmertrekvaart.Abstracts;
+﻿using Haarlemmertrekvaart.Abstracts;
 using Haarlemmertrekvaart.Configuration;
 using Haarlemmertrekvaart.Http;
-using Haarlemmertrekvaart.Services;
+using Haarlemmertrekvaart.Modules;
 
-namespace Haarlemmertrekvaart.Clients
+namespace Haarlemmertrekvaart
 {
     public class NsClient : ClientBase
     {
@@ -17,7 +16,7 @@ namespace Haarlemmertrekvaart.Clients
         /// </summary>
         public StationModule Stations => new StationModule(this);
 
-        /// <summary>
+        //// <summary>
         ///// Provides all API methods in Travel Planner area
         ///// </summary>
         //public TravelPlannerService TravelPlannerService => new TravelPlannerService(this);

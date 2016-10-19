@@ -1,7 +1,6 @@
 ﻿using Haarlemmertrekvaart.Http.Interfaces;
 using System.Collections.Generic;
 using System.Net;
-using System;
 
 namespace Haarlemmertrekvaart.Http
 {
