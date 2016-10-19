@@ -13,24 +13,24 @@ namespace Haarlemmertrekvaart
         }
 
         /// <summary>
-        /// Provides all API methods in Station area
+        /// Provides all API methods in Stations area
         /// </summary>
         public StationModule Stations => new StationModule(this);
 
-        //// <summary>
-        ///// Provides all API methods in Travel Planner area
-        ///// </summary>
-        //public TravelPlannerService TravelPlannerService => new TravelPlannerService(this);
+        /// <summary>
+        /// Provides all API methods in Travel Planner area
+        /// </summary>
+        public TravelPlannerModule TravelPlanner => new TravelPlannerModule(this);
 
         /// <summary>
         /// Provides all API methods in Disruption/Engineering works area
         /// </summary>
         public DisruptionModule Disruptions => new DisruptionModule(this);
 
-        ///// <summary>
-        ///// Provides all API methods in Departure area
-        ///// </summary>
-        //public DepartureModule Departure => new DepartureModule(this);
+        /// <summary>
+        /// Provides all API methods in Departures area
+        /// </summary>
+        public DepartureModule Departures => new DepartureModule(this);
 
         /// <summary>
         /// Returns the framework version of the haarlemmertrekvaart.

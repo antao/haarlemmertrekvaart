@@ -46,7 +46,9 @@
     <Compile Include="Http\Interfaces\IHttpConnection.cs" />
     <Compile Include="Http\Interfaces\IHttpRequest.cs" />
     <Compile Include="Http\Interfaces\IHttpResponse.cs" />
+    <Compile Include="Modules\DepartureModule.cs" />
     <Compile Include="Modules\DisruptionsModule.cs" />
+    <Compile Include="Modules\TravelPlannerService.cs" />
     <Compile Include="NsClient.cs" />
     <Compile Include="Configuration\ConnectionConfiguration.cs" />
     <Compile Include="Http\HttpHeaders.cs" />

@@ -13,7 +13,7 @@ namespace Haarlemmertrekvaart.Modules
         }
 
         /// <summary>
-        /// Gets the names of all of the stations. 
+        /// Gets information for all the stations
         /// </summary>
         /// <returns>Stations</returns>
         public async Task<Stations> GetAll()
