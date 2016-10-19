@@ -12,4 +12,4 @@ $content = $content -replace '\$version\$',$versionStr
 
 $content | Out-File $root\nuget\Haarlemmertrekvaart.compiled.nuspec
 
-& $root\NuGet\NuGet.exe pack $root\NuGet\Haarlemmertrekvaart.compiled.nuspec
+&$root\NuGet\NuGet.exe pack $root\NuGet\Haarlemmertrekvaart.compiled.nuspec -Version $version
