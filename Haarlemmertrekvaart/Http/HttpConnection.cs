@@ -56,6 +56,9 @@ namespace Haarlemmertrekvaart.Http
         {
             foreach (var keyValuePair in headers)
             {
+                if (client.DefaultRequestHeaders.Contains(keyValuePair.Key))
+                    return; 
+
                 switch (keyValuePair.Key.ToLowerInvariant())
                 {
                     default:
