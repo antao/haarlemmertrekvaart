@@ -20,12 +20,12 @@ namespace Haarlemmertrekvaart.Configuration
 
         public TimeSpan? KeepAlive { get; set; }
 
-        public ConnectionConfiguration(string username, string password)
+        public ConnectionConfiguration(string username, string key)
         {
             HttpHeaders = new HttpHeaders();
 
             // Unfortunatelly only BasicAuthentication is supported by the NS API
-            var authorizationHeader = Convert.ToBase64String(new UTF8Encoding().GetBytes($"{username}:{password}"));
+            var authorizationHeader = Convert.ToBase64String(new UTF8Encoding().GetBytes($"{username}:{key}"));
 
             HttpHeaders.AddHeader(Authorization, $"Basic {authorizationHeader}");
             HttpHeaders.AddHeader(AcceptCharset, "UTF-8");
