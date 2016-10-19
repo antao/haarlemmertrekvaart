@@ -5,13 +5,13 @@ using System;
 
 namespace Haarlemmertrekvaart.Services
 {
-    public class DepartureService
+    public class DepartureModule
     {
         private readonly NsClient _nsClient;
 
-        public DepartureService(NsClient currentInstance)
+        public DepartureModule(NsClient instance)
         {
-            _nsClient = currentInstance;
+            _nsClient = instance;
         }
 
         /// <summary>

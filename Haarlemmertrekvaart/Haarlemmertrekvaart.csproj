@@ -40,20 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clients\NsClient.cs" />
+    <Compile Include="Abstracts\ClientBase.cs" />
+    <Compile Include="Http\HttpRequest.cs" />
+    <Compile Include="Http\HttpResponse.cs" />
+    <Compile Include="Http\Interfaces\IHttpConnection.cs" />
+    <Compile Include="Http\Interfaces\IHttpRequest.cs" />
+    <Compile Include="Http\Interfaces\IHttpResponse.cs" />
+    <Compile Include="NsClient.cs" />
+    <Compile Include="Configuration\ConnectionConfiguration.cs" />
+    <Compile Include="Http\HttpHeaders.cs" />
     <Compile Include="Departure\ActueleVertrekTijden.cs" />
     <Compile Include="Departure\VertrekkendeTrein.cs" />
     <Compile Include="Disruption\Gepland.cs" />
     <Compile Include="Disruption\Ongepland.cs" />
     <Compile Include="Disruption\Storing.cs" />
     <Compile Include="Disruption\Storingen.cs" />
-    <Compile Include="Http\AsyncResponseReceivedEventArgs.cs" />
-    <Compile Include="Http\ResponseReceivedEventArgs.cs" />
+    <Compile Include="Http\HttpConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DepartureService.cs" />
-    <Compile Include="Services\DisruptionService.cs" />
-    <Compile Include="Services\StationService.cs" />
-    <Compile Include="Services\TravelPlannerService.cs" />
+    <Compile Include="Modules\StationsModule.cs" />
     <Compile Include="Station\Namen.cs" />
     <Compile Include="Station\Station.cs" />
     <Compile Include="Station\Stations.cs" />
