@@ -18,7 +18,7 @@ namespace Haarlemmertrekvaart.Departure
             set { VertrekTijd = DateTimeOffset.Parse(value).DateTime; }
         }
 
-        public int VertrekVertraging { get; set; }
+        public string VertrekVertraging { get; set; }
 
         public string VertrekVertragingTekst { get; set; }
 
@@ -30,7 +30,7 @@ namespace Haarlemmertrekvaart.Departure
 
         public string Vervoerder { get; set; }
 
-        public int VertrekSpoor { get; set; }
+        public string VertrekSpoor { get; set; }
 
         public string ReisTip { get; set; }
 
