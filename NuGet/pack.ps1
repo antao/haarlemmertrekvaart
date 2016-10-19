@@ -13,4 +13,4 @@ $content = $content -replace '\$version\$',$versionStr
 $content | Out-File $root\nuget\Haarlemmertrekvaart.compiled.nuspec
 
 $file= "Haarlemmertrekvaart.compiled.nuspec"
-Invoke-Expression "$C:\projects\NuGet\nuget.exe pack $($file) -Version $($version)"
+Invoke-Expression "$($root)\NuGet\NuGet.exe pack $($file) -Version $($version)"
