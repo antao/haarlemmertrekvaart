@@ -6,7 +6,7 @@ namespace Haarlemmertrekvaart.Http.Interfaces
 {
     public interface IHttpRequest
     {
-        HttpMethod Method { get; set; }
+        HttpMethod HttpMethod { get; set; }
 
         Uri RequestUri { get; }
 

@@ -15,46 +15,48 @@ namespace Haarlemmertrekvaart.Abstracts
         private readonly HttpConnection _httpConnection;
         // todo : inject a serializer private readonly ISerializer _serializer;
 
-        private static readonly Uri endpoint = new Uri("https://webservices.ns.nl/");
+        private static readonly Uri Endpoint = new Uri("https://webservices.ns.nl/");
 
         protected ClientBase(ConnectionConfiguration configurationSettings, HttpConnection httpConnection)
         {
+            if (configurationSettings == null)
+            {
+                throw new ArgumentNullException(nameof(configurationSettings));
+            }
+
             _configurationSettings = configurationSettings;
             _httpConnection = httpConnection ?? new HttpConnection();
         }
 
-        internal async Task<T> Get<T>(Uri uri) where T : new()
+        internal async Task<T> Get<T>(string url) where T : new()
         {
-            var httpRequest = BuildRequest(uri);
-            httpRequest.Method = HttpMethod.Get;
-
+            var httpRequest = CreateHttpRequest(url, HttpMethod.Get);
             var httpResponse = await _httpConnection.Get(httpRequest);
             return DeserializeContent<T>(httpResponse.Content);
         }
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-        internal async Task<T> Post<T>(string url) where T : new()
-#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
-        {
-            throw new NotImplementedException();
-        }
-
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-        internal async Task<T> Put<T>(string url) where T : new()
+        internal async Task<T> Post<T>() where T : new()
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             throw new NotImplementedException();
         }
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-        internal async Task<T> Delete<T>(string url) where T : new()
+        internal async Task<T> Put<T>() where T : new()
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+        {
+            throw new NotImplementedException();
+        }
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+        internal async Task<T> Delete<T>() where T : new()
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             throw new NotImplementedException();
         }
 
-        private IHttpRequest BuildRequest(Uri requestUri)
+        private IHttpRequest CreateHttpRequest(string requestUrl, HttpMethod httpMethod)
         {
-            return new HttpRequest(requestUri, _configurationSettings.HttpHeaders, null, null, _configurationSettings.RequestTimeout);
+            return new HttpRequest(new Uri(Endpoint + requestUrl), _configurationSettings.HttpHeaders, httpMethod, null, null, _configurationSettings.RequestTimeout);
         }
 
         private T DeserializeContent<T>(string response)

@@ -7,7 +7,7 @@ namespace Haarlemmertrekvaart.Http
 {
     public class HttpRequest : IHttpRequest
     {
-        public HttpMethod Method { get; set; }
+        public HttpMethod HttpMethod { get; set; }
 
         public Uri RequestUri { get; private set; }
 
@@ -19,10 +19,11 @@ namespace Haarlemmertrekvaart.Http
 
         public TimeSpan? Timeout { get; set; }
 
-        public HttpRequest(Uri requestUri, IEnumerable<KeyValuePair<string, string>> httpHeaders, string content = null, string contentType = null, TimeSpan? timeout = null)
+        public HttpRequest(Uri requestUri, IEnumerable<KeyValuePair<string, string>> httpHeaders, HttpMethod httpMethod, string content = null, string contentType = null, TimeSpan? timeout = null)
         {
             RequestUri = requestUri;
             HttpHeaders = httpHeaders;
+            HttpMethod = httpMethod;
             Content = content;
             ContentType = contentType;
             Timeout = timeout;

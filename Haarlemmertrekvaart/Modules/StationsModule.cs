@@ -1,9 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Haarlemmertrekvaart.Clients;
 using Haarlemmertrekvaart.Station;
-using System;
 
-namespace Haarlemmertrekvaart.Services
+namespace Haarlemmertrekvaart.Modules
 {
     public class StationModule
     {
@@ -16,7 +14,7 @@ namespace Haarlemmertrekvaart.Services
 
         public async Task<Stations> GetAll()
         {
-            return await _nsClient.Get<Stations>(new Uri("https://webservices.ns.nl/ns-api-stations-v2"));
+            return await _nsClient.Get<Stations>("ns-api-stations-v2");
         }
     }
 }
