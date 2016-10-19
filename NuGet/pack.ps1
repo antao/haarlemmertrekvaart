@@ -1,4 +1,4 @@
-$root = (split-path -parent $PSScriptRoot) + '\..'
+$root = (split-path -parent $PSScriptRoot)
 
 Write-Host "ROOT - " + $root -ForegroundColor Magenta
 
@@ -12,4 +12,4 @@ $content = $content -replace '\$version\$',$versionStr
 
 $content | Out-File $root\Haarlemmertrekvaart\nuget\Haarlemmertrekvaart.compiled.nuspec
 
-& $root\Haarlemmertrekvaart\NuGet\NuGet.exe pack $root\Haarlemmertrekvaart\NuGet\Haarlemmertrekvaart.compiled.nuspec
+& $root\NuGet\NuGet.exe pack $root\Haarlemmertrekvaart\NuGet\Haarlemmertrekvaart.compiled.nuspec
