@@ -13,6 +13,3 @@ $content = $content -replace '\$version\$',$versionStr
 $content | Out-File $root\nuget\Haarlemmertrekvaart.compiled.nuspec
 
 Write-Host PS C:\> pathtest $($root)\NuGet" -ForegroundColor Magenta
-
-# $file= "Haarlemmertrekvaart.compiled.nuspec"
-# Invoke-Expression "$($root)\NuGet\NuGet.exe pack $($file) -Version $($version)"
