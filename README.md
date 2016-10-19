@@ -2,22 +2,23 @@
 
 *Work in progress*
 
-Because the NS API only supports Basic Access Authentication(https://en.wikipedia.org/wiki/Basic_access_authentication), I would not recommend the use of it in any production environment.
-
-## Request you developer key to the NS API
-https://www.ns.nl/ews-aanvraagformulier/
-
 ## Installation
 *Work in progress*
 
 ## Using Haarlemmertrekvaart
 
 ### General
-Getting data from NS pretty straightforward. Create a NsClient object and enter a valid username and password.
+Getting data from NS pretty straightforward. Create a NsClient object and enter a valid username and key.
 
 ```chsarp
-NsClient client = new NsClient("username", "password");
+ConnectionConfiguration connectionConfiguration = new ConnectionConfiguration("joaoantao", "myawesomekey");
+NsClient nsClient = new NsClient(connectionConfiguration);
 ```
+
+The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), *I would not recommend the use of it in any production environment.*
+
+## Request you developer key to the NS API
+https://www.ns.nl/ews-aanvraagformulier/
 
 ### Examples
 *Work in progress*
