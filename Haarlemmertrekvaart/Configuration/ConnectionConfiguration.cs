@@ -14,7 +14,7 @@ namespace Haarlemmertrekvaart.Configuration
         private const string ContentTypeKey = "Content-Type";
         private const string AcceptCharset = "Accept-Charset";
 
-        public HttpHeaders HttpHeaders { get; private set; }
+        public HttpHeaders HttpHeaders { get; }
 
         public TimeSpan? RequestTimeout { get; set; }
 
