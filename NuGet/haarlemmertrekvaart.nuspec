@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+<package >
   <metadata>
     <id>haarlemmertrekvaart</id>
-    <version>0.0.0</version>
+    <version>$version$</version>
     <authors>João Antão</authors>
     <owners>João Antão</owners>
     <licenseUrl>https://github.com/antao/haarlemmertrekvaart/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/antao/haarlemmertrekvaart</projectUrl>
-    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Unofficial .NET client for accessing the NS (Nederlandse Spoorwegen) API </description>
+    <description>Unofficial .NET client for accessing the NS (Nederlandse Spoorwegen) API</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2016</copyright>
     <tags>ns api dotnet</tags>
   </metadata>
 </package>

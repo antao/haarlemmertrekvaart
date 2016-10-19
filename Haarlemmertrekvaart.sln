@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haarlemmertrekvaart", "Haar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haarlemmertrekvaart.UnitTests", "Haarlemmertrekvaart.UnitTests\Haarlemmertrekvaart.UnitTests.csproj", "{84A0E7FB-DE42-48D2-B76A-10596CB5FE46}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{89EF1D1F-7A78-4EAF-8E8B-60098F810145}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet\haarlemmertrekvaart.nuspec = NuGet\haarlemmertrekvaart.nuspec
+		NuGet\NuGet.exe = NuGet\NuGet.exe
+		NuGet\pack.ps1 = NuGet\pack.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

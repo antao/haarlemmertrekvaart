@@ -1,17 +1,16 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Haarlemmertrekvaart.Departure;
-using Haarlemmertrekvaart.Clients;
-using System;
 
-namespace Haarlemmertrekvaart.Services
+namespace Haarlemmertrekvaart.Modules
 {
-    public class DepartureService
+    public class DepartureModule
     {
         private readonly NsClient _nsClient;
 
-        public DepartureService(NsClient currentInstance)
+        public DepartureModule(NsClient nsClient)
         {
-            _nsClient = currentInstance;
+            _nsClient = nsClient;
         }
 
         /// <summary>
@@ -19,7 +18,7 @@ namespace Haarlemmertrekvaart.Services
         /// </summary>
         /// <param name="station">The code (abbreviation) or short name or medium-length name or full name or synonym of the station's name</param>
         /// <returns>ActueleVertrekTijden</returns>
-        public async Task<ActueleVertrekTijden> GetDepartures(string station)
+        public async Task<ActueleVertrekTijden> GetAll(string station)
         {
             if (string.IsNullOrWhiteSpace(station))
             {
