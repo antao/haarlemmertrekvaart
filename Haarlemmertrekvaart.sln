@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{89EF1D1F
 	ProjectSection(SolutionItems) = preProject
 		NuGet\haarlemmertrekvaart.nuspec = NuGet\haarlemmertrekvaart.nuspec
 		NuGet\NuGet.exe = NuGet\NuGet.exe
-		NuGet\publish.ps1 = NuGet\publish.ps1
+		NuGet\pack.ps1 = NuGet\pack.ps1
 	EndProjectSection
 EndProject
 Global
