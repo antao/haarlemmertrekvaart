@@ -25,7 +25,7 @@ namespace Haarlemmertrekvaart
         /// <summary>
         /// Provides all API methods in Disruption/Engineering works area
         /// </summary>
-        public DisruptionModule DisruptionService => new DisruptionModule(this);
+        public DisruptionModule Disruptions => new DisruptionModule(this);
 
         ///// <summary>
         ///// Provides all API methods in Departure area
