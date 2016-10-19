@@ -25,9 +25,9 @@ namespace Haarlemmertrekvaart.Configuration
             HttpHeaders = new HttpHeaders();
 
             // Unfortunatelly only BasicAuthentication is supported by the NS API
-            var authorizationHeader = Convert.ToBase64String(new UTF8Encoding().GetBytes(string.Format("{0}:{1}", username, password)));
+            var authorizationHeader = Convert.ToBase64String(new UTF8Encoding().GetBytes($"{username}:{password}"));
 
-            HttpHeaders.AddHeader(Authorization, string.Format("Basic {0}", authorizationHeader));
+            HttpHeaders.AddHeader(Authorization, $"Basic {authorizationHeader}");
             HttpHeaders.AddHeader(AcceptCharset, "UTF-8");
         }
     }
