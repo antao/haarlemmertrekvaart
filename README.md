@@ -14,10 +14,8 @@ ConnectionConfiguration connectionConfiguration = new ConnectionConfiguration("j
 NsClient nsClient = new NsClient(connectionConfiguration);
 ```
 
-The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) __I would not recommend the use of it in any production environment__
-
-## Request you developer key to the NS API
-https://www.ns.nl/ews-aanvraagformulier/
+The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) __I would not recommend the use of it in any production environment__. 
+You can request your developer key to NS [here] (https://www.ns.nl/ews-aanvraagformulier/)
 
 ### Examples
 *Work in progress*
