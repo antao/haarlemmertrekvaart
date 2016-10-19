@@ -1,16 +1,15 @@
 ﻿using System.Threading.Tasks;
-using Haarlemmertrekvaart.Clients;
 using Haarlemmertrekvaart.Disruption;
 
-namespace Haarlemmertrekvaart.Services
+namespace Haarlemmertrekvaart.Modules
 {
     public class DisruptionService
     {
         private readonly NsClient _nsClient;
 
-        public DisruptionService(NsClient currentInstance)
+        public DisruptionService(NsClient nsClient)
         {
-            _nsClient = currentInstance;
+            _nsClient = nsClient;
         }
 
         /// <summary>
