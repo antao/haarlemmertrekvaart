@@ -1,4 +1,5 @@
-﻿using Haarlemmertrekvaart.Abstracts;
+﻿using System.Reflection;
+using Haarlemmertrekvaart.Abstracts;
 using Haarlemmertrekvaart.Configuration;
 using Haarlemmertrekvaart.Http;
 using Haarlemmertrekvaart.Modules;
@@ -21,14 +22,23 @@ namespace Haarlemmertrekvaart
         ///// </summary>
         //public TravelPlannerService TravelPlannerService => new TravelPlannerService(this);
 
-        ///// <summary>
-        ///// Provides all API methods in Disruption/Engineering works area
-        ///// </summary>
-        //public DisruptionService DisruptionService => new DisruptionService(this);
+        /// <summary>
+        /// Provides all API methods in Disruption/Engineering works area
+        /// </summary>
+        public DisruptionModule DisruptionService => new DisruptionModule(this);
 
         ///// <summary>
         ///// Provides all API methods in Departure area
         ///// </summary>
         //public DepartureModule Departure => new DepartureModule(this);
+
+        /// <summary>
+        /// Returns the framework version of the haarlemmertrekvaart.
+        /// </summary>
+        /// <returns>The version number of the haarlemmertrekvaart.</returns>
+        public override string ToString()
+        {
+            return $"haarlemmertrekvaart version {Assembly.GetExecutingAssembly().GetName().Version}";
+        }
     }
 }

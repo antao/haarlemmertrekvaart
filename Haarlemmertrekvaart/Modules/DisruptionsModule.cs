@@ -3,11 +3,11 @@ using Haarlemmertrekvaart.Disruption;
 
 namespace Haarlemmertrekvaart.Modules
 {
-    public class DisruptionService
+    public class DisruptionModule
     {
         private readonly NsClient _nsClient;
 
-        public DisruptionService(NsClient nsClient)
+        public DisruptionModule(NsClient nsClient)
         {
             _nsClient = nsClient;
         }
