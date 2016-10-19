@@ -7,7 +7,8 @@
 ## Using Haarlemmertrekvaart
 
 ### General
-Getting data from NS pretty straightforward. Create a NsClient object and enter a valid username and key.
+Getting data from NS pretty straightforward. Create a ConnectionConfiguration object, enter a valid username and key,
+create a NsClient object and pass as parameter the previous ConnectionConfiguration.
 
 ```cs
 ConnectionConfiguration connectionConfiguration = new ConnectionConfiguration("joaoantao", "myawesomekey");
@@ -15,7 +16,7 @@ NsClient nsClient = new NsClient(connectionConfiguration);
 ```
 
 The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) __I would not recommend the use of it in any production environment__. 
-You can request your developer key to NS [here] (https://www.ns.nl/ews-aanvraagformulier/)
+You can request your developer key to NS [here](https://www.ns.nl/ews-aanvraagformulier/).
 
 ### Examples
 *Work in progress*
@@ -36,3 +37,5 @@ A maximum of 50,000 requests per day can be made for each service to the NS API.
 + The developer who is given access to the API is responsible for what is done with his/her connection.
 + You are not permitted to use the NS logo in applications that you develop.
 + It is forbidden to use the API in such a way that false information is broadcast.
+
+More documentation can be found [here](http://www.ns.nl/reisinformatie/ns-api).
