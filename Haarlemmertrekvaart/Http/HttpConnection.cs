@@ -8,16 +8,16 @@ namespace Haarlemmertrekvaart.Http
 {
     public class HttpConnection : IHttpConnection
     {
-        private static readonly HttpClient HttpClient = new HttpClient();
+        private static readonly HttpClient HttpClient = new HttpClient(CreateHttpClientHandler());
 
         public async Task<IHttpResponse> Get(IHttpRequest request)
         {
             ConfigureRequest(request, HttpClient);
-            var responseMessage = await HttpClient.GetAsync(request.RequestUri).ConfigureAwait(false);
-            return await BuildResponse(responseMessage).ConfigureAwait(false);
+            var httpResponseMessage = await HttpClient.GetAsync(request.RequestUri).ConfigureAwait(false);
+            return await CreatHttpResponse(httpResponseMessage).ConfigureAwait(false);
         }
 
-        private static async Task<IHttpResponse> BuildResponse(HttpResponseMessage responseMessage)
+        private static async Task<IHttpResponse> CreatHttpResponse(HttpResponseMessage responseMessage)
         {
             var response = new HttpResponse(responseMessage.IsSuccessStatusCode)
             {
@@ -33,6 +33,17 @@ namespace Haarlemmertrekvaart.Http
         private static Dictionary<string, string> GetResponseHeaders(IEnumerable<KeyValuePair<string, IEnumerable<string>>> responseHeaders)
         {
             return responseHeaders.ToDictionary(header => header.Key, header => header.Value.First());
+        }
+
+        private static HttpClientHandler CreateHttpClientHandler()
+        {
+            // Support HttpCompression ? 
+            var httpClientHandler = new HttpClientHandler
+            {
+                // AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate,
+            };
+
+            return httpClientHandler;
         }
 
         private static void ConfigureRequest(IHttpRequest request, HttpClient client)
