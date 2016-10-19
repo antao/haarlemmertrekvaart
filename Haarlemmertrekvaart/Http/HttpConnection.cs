@@ -17,6 +17,22 @@ namespace Haarlemmertrekvaart.Http
             return await CreatHttpResponse(httpResponseMessage).ConfigureAwait(false);
         }
 
+        public Task<IHttpResponse> Put(IHttpRequest request)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<IHttpResponse> Post(IHttpRequest request)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<IHttpResponse> Delete(IHttpRequest request)
+        {
+            throw new System.NotImplementedException();
+        }
+
+
         private static async Task<IHttpResponse> CreatHttpResponse(HttpResponseMessage responseMessage)
         {
             var response = new HttpResponse(responseMessage.IsSuccessStatusCode)
@@ -37,9 +53,9 @@ namespace Haarlemmertrekvaart.Http
 
         private static HttpClientHandler CreateHttpClientHandler()
         {
-            // Support HttpCompression ? 
             var httpClientHandler = new HttpClientHandler
             {
+                // Support HttpCompression ? 
                 // AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate,
             };
 
@@ -48,8 +64,16 @@ namespace Haarlemmertrekvaart.Http
 
         private static void ConfigureRequest(IHttpRequest request, HttpClient client)
         {
-            // ValidateTimeouts(request, client);
+            SetTimeout(request, client);
             AddHeaders(request.HttpHeaders, client);
+        }
+
+        private static void SetTimeout(IHttpRequest request, HttpClient client)
+        {
+            if (!request.Timeout.HasValue)
+                return;
+
+            client.Timeout = request.Timeout.Value;
         }
 
         private static void AddHeaders(IEnumerable<KeyValuePair<string, string>> headers, HttpClient client)
