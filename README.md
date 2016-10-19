@@ -10,8 +10,7 @@
 ## Using Haarlemmertrekvaart
 
 ### General
-Getting data from NS pretty straightforward. Create a ConnectionConfiguration object, enter a valid username and key,
-create a NsClient object and pass as parameter the previous ConnectionConfiguration.
+Getting data from NS API is pretty straightforward and hopefully this client will make your life easier. Create a NsClient object and pass a valid ConnectionConfiguration object with your username and developer key
 
 ```cs
 ConnectionConfiguration connectionConfiguration = new ConnectionConfiguration("joaoantao", "myawesomekey");
