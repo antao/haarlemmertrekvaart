@@ -7,7 +7,7 @@ $versionStr = "{0}.{1}.{2}" -f ($version.Major, $version.Minor, $version.Build)
 
 Write-Host "Setting .nuspec version tag to $versionStr"
 
-$content = (Get-Content $root\Haarlemmertrekvaart\NuGet\Haarlemmertrekvaart.nuspec) 
+$content = (Get-Content $root\NuGet\Haarlemmertrekvaart.nuspec) 
 $content = $content -replace '\$version\$',$versionStr
 
 $content | Out-File $root\Haarlemmertrekvaart\nuget\Haarlemmertrekvaart.compiled.nuspec
