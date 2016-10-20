@@ -1,4 +1,4 @@
-version: 0.1.0{build}-rc
+version: 0.1.{build}-alpha
 
 # branches:
 #  only:
