@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-using Haarlemmertrekvaart.Configuration;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Haarlemmertrekvaart.UnitTests
 {
