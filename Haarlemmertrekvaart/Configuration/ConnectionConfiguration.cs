@@ -9,9 +9,7 @@ namespace Haarlemmertrekvaart.Configuration
     [EditorBrowsable(EditorBrowsableState.Never)]
     public class ConnectionConfiguration
     {
-        private const string AcceptKey = "Accept";
         private const string Authorization = "Authorization";
-        private const string ContentTypeKey = "Content-Type";
         private const string AcceptCharset = "Accept-Charset";
 
         public HttpHeaders HttpHeaders { get; }
@@ -22,6 +20,16 @@ namespace Haarlemmertrekvaart.Configuration
 
         public ConnectionConfiguration(string username, string key)
         {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                throw new ArgumentNullException(nameof(username));
+            }
+
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
             HttpHeaders = new HttpHeaders();
 
             // Unfortunatelly only BasicAuthentication is supported by the NS API
