@@ -16,6 +16,12 @@ namespace Haarlemmertrekvaart.UnitTests.Configuration
         }
 
         [Test]
+        public void ConnectionConfiguration_HttpHeaders_Contains_AcceptCharset()
+        {
+            Assert.That(_target.HttpHeaders.GetHeader("Accept-Charset"), Is.Not.Null);
+        }
+
+        [Test]
         public void ConnectionConfiguration_HttpHeaders_Contains_BasicAuthentication()
         {
             Assert.That(_target.HttpHeaders.GetHeader("Authorization"), Is.Not.Null);
