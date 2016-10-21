@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Haarlemmertrekvaart.TravelPlanner;
+using Haarlemmertrekvaart.Models.TravelPlanner;
 
 namespace Haarlemmertrekvaart.Modules
 {

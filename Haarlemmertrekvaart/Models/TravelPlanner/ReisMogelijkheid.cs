@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.TravelPlanner
+namespace Haarlemmertrekvaart.Models.TravelPlanner
 {
     public class ReisMogelijkheid
     {

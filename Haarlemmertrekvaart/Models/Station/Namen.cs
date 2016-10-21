@@ -1,5 +1,5 @@
 ﻿
-namespace Haarlemmertrekvaart.Station
+namespace Haarlemmertrekvaart.Models.Station
 {
     public class Namen
     {

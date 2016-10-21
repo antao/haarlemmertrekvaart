@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Haarlemmertrekvaart.Departure;
+using Haarlemmertrekvaart.Models.Departure;
 
 namespace Haarlemmertrekvaart.Modules
 {

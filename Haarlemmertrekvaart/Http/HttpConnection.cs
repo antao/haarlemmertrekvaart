@@ -44,7 +44,6 @@ namespace Haarlemmertrekvaart.Http
             throw new NotImplementedException();
         }
 
-
         private static async Task<IHttpResponse> CreatHttpResponse(HttpResponseMessage responseMessage)
         {
             var response = new HttpResponse(responseMessage.IsSuccessStatusCode)

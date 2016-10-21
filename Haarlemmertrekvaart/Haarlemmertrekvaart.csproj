@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\ClientBase.cs" />
+    <Compile Include="Http\Exceptions\HttpException.cs" />
     <Compile Include="Http\HttpRequest.cs" />
     <Compile Include="Http\HttpResponse.cs" />
     <Compile Include="Http\Interfaces\IHttpConnection.cs" />
@@ -52,23 +53,25 @@
     <Compile Include="NsClient.cs" />
     <Compile Include="Configuration\ConnectionConfiguration.cs" />
     <Compile Include="Http\HttpHeaders.cs" />
-    <Compile Include="Departure\ActueleVertrekTijden.cs" />
-    <Compile Include="Departure\VertrekkendeTrein.cs" />
-    <Compile Include="Disruption\Gepland.cs" />
-    <Compile Include="Disruption\Ongepland.cs" />
-    <Compile Include="Disruption\Storing.cs" />
-    <Compile Include="Disruption\Storingen.cs" />
+    <Compile Include="Models\Departure\ActueleVertrekTijden.cs" />
+    <Compile Include="Models\Departure\VertrekkendeTrein.cs" />
+    <Compile Include="Models\Disruption\Gepland.cs" />
+    <Compile Include="Models\Disruption\Ongepland.cs" />
+    <Compile Include="Models\Disruption\Storing.cs" />
+    <Compile Include="Models\Disruption\Storingen.cs" />
     <Compile Include="Http\HttpConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modules\StationsModule.cs" />
-    <Compile Include="Station\Namen.cs" />
-    <Compile Include="Station\Station.cs" />
-    <Compile Include="Station\Stations.cs" />
-    <Compile Include="TravelPlanner\Melding.cs" />
-    <Compile Include="TravelPlanner\ReisDeel.cs" />
-    <Compile Include="TravelPlanner\ReisMogelijkheden.cs" />
-    <Compile Include="TravelPlanner\ReisMogelijkheid.cs" />
-    <Compile Include="TravelPlanner\ReisStop.cs" />
+    <Compile Include="Models\Station\Namen.cs" />
+    <Compile Include="Models\Station\Station.cs" />
+    <Compile Include="Models\Station\Stations.cs" />
+    <Compile Include="Models\TravelPlanner\Melding.cs" />
+    <Compile Include="Models\TravelPlanner\ReisDeel.cs" />
+    <Compile Include="Models\TravelPlanner\ReisMogelijkheden.cs" />
+    <Compile Include="Models\TravelPlanner\ReisMogelijkheid.cs" />
+    <Compile Include="Models\TravelPlanner\ReisStop.cs" />
+    <Compile Include="Serializers\ISerializer.cs" />
+    <Compile Include="Serializers\XmlSerializer.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

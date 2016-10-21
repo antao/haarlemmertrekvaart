@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.TravelPlanner
+namespace Haarlemmertrekvaart.Models.TravelPlanner
 {
     public class ReisStop
     {

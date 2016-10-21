@@ -3,21 +3,21 @@
 *Work in progress*
 
  [![Build status](https://ci.appveyor.com/api/projects/status/aowu3evc5c24lqay?svg=true)](https://ci.appveyor.com/project/antao/haarlemmertrekvaart)
- 
+
 ## Installation
 *Work in progress*
 
 ## Using Haarlemmertrekvaart
 
 ### General
-Getting data from NS API is pretty straightforward and hopefully this client will make your life easier. Create a NsClient object and pass a valid ConnectionConfiguration object with your username and developer key
+Getting data from NS API is pretty straightforward and hopefully this client will make your life easier. Create a NsClient object and pass a valid ConnectionConfiguration object with your username and developer key.
 
 ```cs
 ConnectionConfiguration connectionConfiguration = new ConnectionConfiguration("joaoantao", "myawesomekey");
 NsClient nsClient = new NsClient(connectionConfiguration);
 ```
 
-The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) __I would not recommend the use of it in any production environment__. 
+The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) __I would not recommend the use of it in any production environment__.
 You can request your developer key to NS [here](https://www.ns.nl/ews-aanvraagformulier/).
 
 ### Examples

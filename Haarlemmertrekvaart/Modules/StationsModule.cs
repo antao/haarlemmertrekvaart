@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Haarlemmertrekvaart.Station;
+using Haarlemmertrekvaart.Models.Station;
 
 namespace Haarlemmertrekvaart.Modules
 {

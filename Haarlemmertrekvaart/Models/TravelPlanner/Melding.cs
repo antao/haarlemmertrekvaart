@@ -1,4 +1,4 @@
-﻿namespace Haarlemmertrekvaart.TravelPlanner
+﻿namespace Haarlemmertrekvaart.Models.TravelPlanner
 {
     public class Melding
     {
