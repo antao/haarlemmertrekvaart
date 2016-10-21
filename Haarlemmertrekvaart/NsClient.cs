@@ -37,9 +37,5 @@ namespace Haarlemmertrekvaart
         /// Returns the framework version of the haarlemmertrekvaart.
         /// </summary>
         /// <returns>The version number of the haarlemmertrekvaart.</returns>
-        public override string ToString()
-        {
-            return $"haarlemmertrekvaart version {Assembly.GetExecutingAssembly().GetName().Version}";
-        }
     }
 }
