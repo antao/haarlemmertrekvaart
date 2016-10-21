@@ -69,10 +69,10 @@
     <Compile Include="Models\TravelPlanner\ReisMogelijkheden.cs" />
     <Compile Include="Models\TravelPlanner\ReisMogelijkheid.cs" />
     <Compile Include="Models\TravelPlanner\ReisStop.cs" />
+    <Compile Include="Serializers\ISerializer.cs" />
+    <Compile Include="Serializers\XmlSerializer.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Serializers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
