@@ -3,12 +3,13 @@ using Haarlemmertrekvaart.Abstracts;
 using Haarlemmertrekvaart.Configuration;
 using Haarlemmertrekvaart.Http;
 using Haarlemmertrekvaart.Modules;
+using Haarlemmertrekvaart.Serializers;
 
 namespace Haarlemmertrekvaart
 {
     public class NsClient : ClientBase
     {
-        public NsClient(ConnectionConfiguration configurationSettings, HttpConnection httpConnection = null) : base(configurationSettings, httpConnection)
+        public NsClient(ConnectionConfiguration configurationSettings, HttpConnection httpConnection = null, ISerializer serializer = null) : base(configurationSettings, httpConnection, serializer)
         {
         }
 

@@ -1,6 +1,7 @@
 ﻿using Haarlemmertrekvaart.Configuration;
 using Haarlemmertrekvaart.Http;
 using Haarlemmertrekvaart.Http.Interfaces;
+using Haarlemmertrekvaart.Serializers;
 using System;
 using System.IO;
 using System.Net.Http;
@@ -13,11 +14,11 @@ namespace Haarlemmertrekvaart.Abstracts
     {
         private readonly ConnectionConfiguration _configurationSettings;
         private readonly HttpConnection _httpConnection;
-        // todo : inject a serializer private readonly ISerializer _serializer;
+        private readonly ISerializer _serializer;
 
         private static readonly Uri Endpoint = new Uri("https://webservices.ns.nl/");
 
-        protected ClientBase(ConnectionConfiguration configurationSettings, HttpConnection httpConnection)
+        protected ClientBase(ConnectionConfiguration configurationSettings, HttpConnection httpConnection, ISerializer serializer)
         {
             if (configurationSettings == null)
             {
@@ -26,13 +27,14 @@ namespace Haarlemmertrekvaart.Abstracts
 
             _configurationSettings = configurationSettings;
             _httpConnection = httpConnection ?? new HttpConnection();
+            _serializer = serializer ?? new Serializers.XmlSerializer();
         }
 
         internal async Task<T> Get<T>(string url) where T : new()
         {
             var httpRequest = CreateHttpRequest(url, HttpMethod.Get);
             var httpResponse = await _httpConnection.Get(httpRequest);
-            return DeserializeContent<T>(httpResponse.Content);
+            return _serializer.Deserialize<T>(httpResponse.Content);
         }
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
@@ -57,15 +59,6 @@ namespace Haarlemmertrekvaart.Abstracts
         private IHttpRequest CreateHttpRequest(string requestUrl, HttpMethod httpMethod)
         {
             return new HttpRequest(new Uri(Endpoint + requestUrl), _configurationSettings.HttpHeaders, httpMethod, null, null, _configurationSettings.RequestTimeout);
-        }
-
-        private T DeserializeContent<T>(string response)
-        {
-            var xmlSerializer = new XmlSerializer(typeof(T));
-            using (TextReader reader = new StringReader(response))
-            {
-                return (T)xmlSerializer.Deserialize(reader);
-            }
         }
     }
 }
