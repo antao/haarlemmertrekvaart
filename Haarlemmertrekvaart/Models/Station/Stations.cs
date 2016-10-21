@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.Station
+namespace Haarlemmertrekvaart.Models.Station
 {
     [XmlRoot("Stations")]
-    public class Stations : List<Station>
+    public class Stations : List<Models.Station.Station>
     {
     }
 }

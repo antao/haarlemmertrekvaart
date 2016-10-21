@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.Departure
+namespace Haarlemmertrekvaart.Models.Departure
 {
     public class VertrekkendeTrein
     {

@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.Disruption
+namespace Haarlemmertrekvaart.Models.Disruption
 {
     [XmlRoot("Storingen")]
     public class Storingen

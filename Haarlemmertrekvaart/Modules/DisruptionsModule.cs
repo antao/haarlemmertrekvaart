@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Haarlemmertrekvaart.Disruption;
+using Haarlemmertrekvaart.Models.Disruption;
 
 namespace Haarlemmertrekvaart.Modules
 {

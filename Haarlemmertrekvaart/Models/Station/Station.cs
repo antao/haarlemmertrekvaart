@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Haarlemmertrekvaart.Station
+namespace Haarlemmertrekvaart.Models.Station
 {
     public class Station
     {
