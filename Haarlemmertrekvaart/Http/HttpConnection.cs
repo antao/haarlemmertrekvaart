@@ -14,21 +14,12 @@ namespace Haarlemmertrekvaart.Http
 
         public async Task<IHttpResponse> Get(IHttpRequest request)
         {
-            IHttpResponse httpResponse = null;
+            IHttpResponse httpResponse;
             ConfigureRequest(request, HttpClient);
             try
             {
                 var httpResponseMessage = await HttpClient.GetAsync(request.RequestUri).ConfigureAwait(false);
-
-                if (httpResponseMessage.IsSuccessStatusCode)
-                {
-                    httpResponse = await CreatHttpResponse(httpResponseMessage).ConfigureAwait(false);
-                }
-                else
-                {
-                    // Todo : Handle other types of http status
-                }
-                
+                httpResponse = await CreatHttpResponse(httpResponseMessage).ConfigureAwait(false);
             }
             catch (WebException ex)
             {
@@ -52,7 +43,6 @@ namespace Haarlemmertrekvaart.Http
         {
             throw new NotImplementedException();
         }
-
 
         private static async Task<IHttpResponse> CreatHttpResponse(HttpResponseMessage responseMessage)
         {

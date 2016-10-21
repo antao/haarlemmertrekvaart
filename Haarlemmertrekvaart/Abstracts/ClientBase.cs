@@ -3,10 +3,9 @@ using Haarlemmertrekvaart.Http;
 using Haarlemmertrekvaart.Http.Interfaces;
 using Haarlemmertrekvaart.Serializers;
 using System;
-using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
+using Haarlemmertrekvaart.Http.Exceptions;
 
 namespace Haarlemmertrekvaart.Abstracts
 {
@@ -27,33 +26,23 @@ namespace Haarlemmertrekvaart.Abstracts
 
             _configurationSettings = configurationSettings;
             _httpConnection = httpConnection ?? new HttpConnection();
-            _serializer = serializer ?? new Serializers.XmlSerializer();
+            _serializer = serializer ?? new XmlSerializer();
         }
 
         internal async Task<T> Get<T>(string url) where T : new()
         {
             var httpRequest = CreateHttpRequest(url, HttpMethod.Get);
-            var httpResponse = await _httpConnection.Get(httpRequest);
+            var httpResponse = await _httpConnection.Get(httpRequest).ConfigureAwait(false);
+            ValidateResponse(httpResponse);
             return _serializer.Deserialize<T>(httpResponse.Content);
         }
 
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-        internal async Task<T> Post<T>() where T : new()
-#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+        private static void ValidateResponse(IHttpResponse response)
         {
-            throw new NotImplementedException();
-        }
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-        internal async Task<T> Put<T>() where T : new()
-#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
-        {
-            throw new NotImplementedException();
-        }
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-        internal async Task<T> Delete<T>() where T : new()
-#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
-        {
-            throw new NotImplementedException();
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new HttpException(response.StatusCode);
+            }
         }
 
         private IHttpRequest CreateHttpRequest(string requestUrl, HttpMethod httpMethod)

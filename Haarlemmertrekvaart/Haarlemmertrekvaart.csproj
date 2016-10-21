@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\ClientBase.cs" />
+    <Compile Include="Http\Exceptions\HttpException.cs" />
     <Compile Include="Http\HttpRequest.cs" />
     <Compile Include="Http\HttpResponse.cs" />
     <Compile Include="Http\Interfaces\IHttpConnection.cs" />
