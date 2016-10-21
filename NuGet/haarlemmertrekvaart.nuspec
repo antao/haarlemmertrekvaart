@@ -11,6 +11,6 @@
     <description>Unofficial .NET client for accessing the NS (Nederlandse Spoorwegen) API</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>ns api dotnet</tags>
+    <tags>ns api dotnet client</tags>
   </metadata>
 </package>
