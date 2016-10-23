@@ -1,11 +1,14 @@
 
-# haarlemmertrekvaart
-*Work in progress*
+# haarlemmertrekvaart 
+[![Build status](https://ci.appveyor.com/api/projects/status/aowu3evc5c24lqay?svg=true)](https://ci.appveyor.com/project/antao/haarlemmertrekvaart) 
+[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/haarlemmertrekvaart/1.1.0)
 
- [![Build status](https://ci.appveyor.com/api/projects/status/aowu3evc5c24lqay?svg=true)](https://ci.appveyor.com/project/antao/haarlemmertrekvaart)
+Unofficial .NET client for accessing the [NS](https://www.ns.nl/en) (Nederlandse Spoorwegen) API.
 
 ## Installation
-*Work in progress*
+This package is available on NuGet Gallery. To install the [haarlemmertrekvaart package](http://www.nuget.org/packages/haarlemmertrekvaart) run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+
+    PM> Install-Package haarlemmertrekvaart
 
 ## Using Haarlemmertrekvaart
 
@@ -17,15 +20,35 @@ ConnectionConfiguration connectionConfiguration = new ConnectionConfiguration("j
 NsClient nsClient = new NsClient(connectionConfiguration);
 ```
 
-The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) __I would not recommend the use of it in any production environment__.
 You can request your developer key to NS [here](https://www.ns.nl/ews-aanvraagformulier/).
+The NS API only supports [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) __I would not recommend the use of it in any production environment__.
 
 ### Examples
-*Work in progress*
 
 #### Stations
 ```cs
-var stations = await client.Stations.GetAll();
+var stations = await client.Station.GetAll();
+```
+
+#### Travel recommendations
+Can be used to employ the NS Travel planner for a train journey from one station to another. A travel recommendation consists of multiple travel options, so that the passenger can make a choice. A travel recommendation includes both planned and up to date information.
+Takes a departure station name and a destination station name as arguments.
+
+```cs
+var recommendations = await client.TravelPlanner.GetAll("Rotterdam+Centraal", "Amsterdam+Centraal");
+```
+
+#### Departures
+Up to date departure times allows users to request an up to date overview for a station which shows all departing trains for the next hour in a specific station. Takes a departure station name as argument.
+
+```cs
+var departures = await client.Departure.GetAll("Amsterdam+Centraal");
+```
+
+#### Disruptions/Engineering works
+
+```cs
+var disruptions = await client.Disruption.GetAll("Amsterdam+Centraal", true);
 ```
 
 ### Limits
