@@ -7,8 +7,8 @@ $versionStr = "{0}.{1}.{2}" -f ($version.Major, $version.Minor, $version.Build)
 
 Write-Host "Setting .nuspec version tag to $versionStr" -ForegroundColor Green
 
-$content = (Get-Content $root\NuGet\Haarlemmertrekvaart.nuspec) 
-$content = $content -replace '\$version\$',$versionStr
-$content | Out-File $root\nuget\Haarlemmertrekvaart.compiled.nuspec
+$content = (Get-Content $root\Build\Haarlemmertrekvaart.nuspec) 
+$content = $content -replace '\$version\$', $versionStr
+$content | Out-File $root\Build\Haarlemmertrekvaart.compiled.nuspec
 
-Invoke-Expression "$($root)\NuGet\NuGet.exe pack $root\nuget\Haarlemmertrekvaart.compiled.nuspec -Version $($version)"
+Invoke-Expression "$($root)\Tools\NuGet\NuGet.exe pack $root\Build\Haarlemmertrekvaart.compiled.nuspec -Version $($version)"
