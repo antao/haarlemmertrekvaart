@@ -16,7 +16,7 @@ platform: Any CPU
 configuration: Release
 
 install:
-    - nuget restore
+  - nuget restore
 
 build:
   project: Haarlemmertrekvaart.sln
