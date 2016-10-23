@@ -1,16 +1,14 @@
 
-# haarlemmertrekvaart 
-[![Build status](https://ci.appveyor.com/api/projects/status/aowu3evc5c24lqay?svg=true)](https://ci.appveyor.com/project/antao/haarlemmertrekvaart) 
-[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/haarlemmertrekvaart/1.1.0)
+# haarlemmertrekvaart [![Build status](https://ci.appveyor.com/api/projects/status/aowu3evc5c24lqay?svg=true)](https://ci.appveyor.com/project/antao/haarlemmertrekvaart) [![NuGet](https://img.shields.io/badge/nuget-1.1.0-blue.svg)](https://www.nuget.org/packages/haarlemmertrekvaart/1.1.0)
 
 Unofficial .NET client for accessing the [NS](https://www.ns.nl/en) (Nederlandse Spoorwegen) API.
 
 ## Installation
-This package is available on NuGet Gallery. To install the [haarlemmertrekvaart package](http://www.nuget.org/packages/haarlemmertrekvaart) run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+This package is available on NuGet Gallery. To install the [haarlemmertrekvaart package](http://www.nuget.org/packages/haarlemmertrekvaart) run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console).
 
     PM> Install-Package haarlemmertrekvaart
 
-## Using Haarlemmertrekvaart
+## Using haarlemmertrekvaart
 
 ### General
 Getting data from NS API is pretty straightforward and hopefully this client will make your life easier. Create a NsClient object and pass a valid ConnectionConfiguration object with your username and developer key.
